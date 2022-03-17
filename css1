@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#body {
+				width: 60%;
+				min-width: 480px;
+				margin: auto;
+				padding: 10px;
+				background-color: #F5F5F5;
+			}
+			header::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			header>div {
+				float: left;
+				padding: 10px;
+				background-color: #fff;
+				margin-right: 15px;
+			}
+			header .Searchbar {
+				width: 150px;
+			}
+			header .Navigation {
+				float: right;
+				margin: 0;
+			}
+			main {
+				margin: 10px auto;
+				position: relative;
+			}
+			main::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			main>.left {
+				float: left;
+				width: 200px;
+				height: 300px;
+				display: flex;
+				flex-direction: column;
+			}
+			main>.right {
+				position: absolute;
+				left: 210px;
+				right: 0;
+				height: 300px;
+			}
+			main .Graph {
+				padding: 10px;
+				background-color: #fff;
+				margin-bottom: 10px;
+			}
+			main .widgets {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+			main .widgets li {
+				height: 100px;
+				flex: 1;
+				padding: 10px;
+				background-color: #fff;
+			}
+			main .widgets li:nth-child(2) {
+				margin: 0 10px;
+			}
+			main .Content {
+				padding: 10px;
+				height: 100px;
+				background-color: #fff;
+			}
+			main .Categories {
+				flex: 3;
+				margin-bottom: 10px;
+			}
+			main .Settings {
+				flex: 1;
+			}
+			main .Categories,
+			main .Settings {
+				padding: 10px;
+				background-color: #fff;
+			}
+			footer {
+				padding: 10px;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="body">
+			<header>
+				<div class="Brand">Brand</div>
+				<div class="Searchbar">Searchbar</div>
+				<div class="Navigation">Navigation</div>
+			</header>
+			<main>
+				<div class="left">
+					<div class="Categories">Categories</div>
+					<div class="Settings">Settings</div>
+				</div>
+				<div class="right">
+					<div class="Graph">Dashboard Graph</div>
+					<ul class="Widgets">
+						<li>Widget</li>
+						<li>Widget</li>
+						<li>Widget</li>
+					</ul>
+					<div class="Content">Dashboard Content</div>
+				</div>
+			</main>
+			<footer>Footer</footer>
+		</div>
+	</body>
+</html>
