@@ -1,0 +1,37 @@
+function Person(name, age, parent, children) {
+  this.name = name;
+  this.age = age;
+  this.parent = Array.isArray(parent) ? parent : [parent];
+  this.children = [];
+}
+
+const csv = `
+name,age,parent
+Bob,30,David
+David,60,Jerry
+Anna,10,Bob
+`;
+
+let transform = (csv) => {
+  let rows = csv.trim().split("\n"); // ['name,age,parent', 'Bob,30,David', 'David,60,Jerry', 'Anna,10,Bob']
+  let propertyNames = rows[0].split(","); // ['name,age,parent']
+  let records = rows.slice(1).map((str) => str.split(",")); // [['Bob', '30', 'David'], ...]
+  let map = new Map(); //以name为唯一键映射的Person对象
+  for (let arr of records) {
+    //arr: ['Bob', '30', 'David']
+    let person = new Person(...arr);
+    map.set(person[propertyNames[0]], person);
+  }
+  for (let obj of map.values()) {
+    //将parent属性的值从string数组转为Person对象的数组
+    let parentName = obj[propertyNames[2]][0];
+    if (map.has(parentName)) {
+      //map里有这个parent
+      obj[propertyNames[2]][0] = map.get(parentName);
+      map.get(parentName).children.push(obj);
+    }
+  }
+  return Array.from(map.values());
+};
+
+transform(csv);
