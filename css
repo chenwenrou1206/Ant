@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .container {
+      height: 600px;
+      display: grid;
+      grid-template-rows: repeat(8, 1fr);
+      grid-template-columns: 1fr;
+      grid-gap: 24px;
+      background: rgb(245, 245, 245);
+      padding: 24px;
+    }
+
+    .top {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(8, 1fr);
+      grid-gap: 24px;
+    }
+
+    .brand {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      background: white;
+    }
+
+    .searchBar {
+      grid-column: 2 / 5;
+      grid-row-start: 1;
+      background: white;
+    }
+
+    .navigation {
+      grid-column: 7/9;
+      grid-row-start: 1;
+      background: white;
+    }
+
+    .middle {
+      grid-column: 1;
+      grid-row: 2/8;
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-columns: 300px repeat(3, 1fr);
+      grid-gap: 24px;
+    }
+
+    .categories {
+      grid-row: 1 / 6;
+      grid-column-start: 1;
+      background: white;
+    }
+
+    .settings {
+      grid-row-start: 6;
+      grid-column-start: 1;
+      background: white;
+    }
+
+    .dashboardGraph {
+      grid-row-start: 1;
+      grid-column: 2/-1;
+      background: white;
+    }
+
+    .widget1 {
+      grid-row: 2/4;
+      grid-column: 2/3;
+      background: white;
+    }
+
+    .widget2 {
+      grid-row: 2/4;
+      grid-column: 3/4;
+      background: white;
+
+    }
+
+    .widget3 {
+      grid-row: 2/4;
+      grid-column: 4/5;
+      background: white;
+    }
+
+    .dashboardContent {
+      grid-row: 4/7;
+      grid-column: 2/5;
+      background: white;
+    }
+
+    .footer {
+      grid-row-start: 8;
+      grid-column-start: 1;
+      background: white;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <div class="brand">brand</div>
+      <div class="searchBar">searchBar</div>
+      <div class="navigation">navigation</div>
+    </div>
+    <div class="middle">
+      <div class="categories">categories</div>
+      <div class="settings">settings</div>
+      <div class="dashboardGraph">Dashboard Graph</div>
+      <div class="widget1">widget</div>
+      <div class="widget2">widget</div>
+      <div class="widget3">widget</div>
+      <div class="dashboardContent">Dashboard Content</div>
+    </div>
+    <div class="footer">footer</div>
+  </div>
+</body>
+</html>
